@@ -10,6 +10,15 @@
 <meta property="og:description" content="Your AI did everything right. So why did it fail? April 27, 2026 · Suffolk University.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://harslan.github.io/aialchemy/">
+<meta property="og:image" content="https://harslan.github.io/aialchemy/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agent AIChemy · The Intent Defense Challenge">
+<meta name="twitter:description" content="Your AI did everything right. So why did it fail?">
+<meta name="twitter:image" content="https://harslan.github.io/aialchemy/og.png">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +66,17 @@
     width: 900px;
     height: 700px;
     background: radial-gradient(ellipse, rgba(15, 245, 196, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glow-b {
+    position: fixed;
+    bottom: -10%;
+    right: -5%;
+    width: 720px;
+    height: 560px;
+    background: radial-gradient(ellipse, rgba(15, 245, 196, 0.028) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
   }
@@ -165,52 +185,6 @@
     max-width: 720px;
   }
 
-  /* partner block */
-  .partner {
-    text-align: center;
-    padding: 40px 0 72px;
-  }
-
-  .partner-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    color: var(--ink-muted);
-    margin-bottom: 14px;
-  }
-
-  .partner-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 16px;
-  }
-
-  .partner-links {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-  }
-
-  .partner-links a {
-    color: var(--green);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-    padding: 4px 2px;
-  }
-
-  .partner-links a:hover { opacity: 0.7; }
-
-  .partner-sep {
-    color: var(--ink-muted);
-  }
-
   /* details strip */
   .details {
     border-top: 1px solid var(--line);
@@ -270,7 +244,7 @@
   input, select {
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     padding: 10px 0;
     color: var(--ink);
     font-family: 'DM Sans', sans-serif;
@@ -340,13 +314,29 @@
     border-top: 1px solid var(--line);
     padding-top: 24px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 14px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.16em;
     color: var(--ink-muted);
   }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-partners a {
+    color: var(--ink-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-partners a:hover { color: var(--green); }
 
   footer a {
     color: var(--green);
@@ -366,6 +356,7 @@
 <body>
 
 <div class="glow"></div>
+<div class="glow-b"></div>
 
 <main>
 
@@ -388,16 +379,6 @@
     </p>
 
     <p class="no-code"><span class="green">No code required.</span> &nbsp; Bring your judgment.</p>
-  </section>
-
-  <section class="partner">
-    <div class="partner-label">PRESENTED IN PARTNERSHIP WITH</div>
-    <div class="partner-name">ISBA Suffolk</div>
-    <div class="partner-links">
-      <a href="https://www.linkedin.com/company/isbasuffolk/" target="_blank" rel="noopener">LINKEDIN</a>
-      <span class="partner-sep">·</span>
-      <a href="https://www.instagram.com/isbaclub.suffolk/" target="_blank" rel="noopener">INSTAGRAM</a>
-    </div>
   </section>
 
   <section class="details">
@@ -457,8 +438,13 @@
   </section>
 
   <footer>
-    <span>SAIL COLLABORATIVE · SAWYER BUSINESS SCHOOL</span>
-    <span>Questions? <a href="mailto:harslan@suffolk.edu">harslan@suffolk.edu</a></span>
+    <div class="footer-row">
+      <span>SAIL COLLABORATIVE · SAWYER BUSINESS SCHOOL</span>
+      <span>Questions? <a href="mailto:harslan@suffolk.edu">harslan@suffolk.edu</a></span>
+    </div>
+    <div class="footer-row footer-partners">
+      <span>IN PARTNERSHIP WITH ISBA SUFFOLK — <a href="https://www.linkedin.com/company/isbasuffolk/" target="_blank" rel="noopener">LINKEDIN</a> · <a href="https://www.instagram.com/isbaclub.suffolk/" target="_blank" rel="noopener">INSTAGRAM</a></span>
+    </div>
   </footer>
 
 </main>
