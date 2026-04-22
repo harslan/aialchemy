@@ -28,12 +28,12 @@
 
   .glow-a {
     position: absolute;
-    top: 22%;
-    left: 32%;
+    top: 20%;
+    left: 30%;
     transform: translate(-50%, -50%);
-    width: 820px;
-    height: 620px;
-    background: radial-gradient(ellipse, rgba(15, 245, 196, 0.065) 0%, transparent 60%);
+    width: 880px;
+    height: 660px;
+    background: radial-gradient(ellipse, rgba(15, 245, 196, 0.09) 0%, transparent 60%);
     pointer-events: none;
   }
 
@@ -41,27 +41,32 @@
     position: absolute;
     bottom: -18%;
     right: -10%;
-    width: 680px;
-    height: 520px;
-    background: radial-gradient(ellipse, rgba(15, 245, 196, 0.045) 0%, transparent 65%);
+    width: 720px;
+    height: 560px;
+    background: radial-gradient(ellipse, rgba(15, 245, 196, 0.06) 0%, transparent 65%);
     pointer-events: none;
   }
 
   .top {
     position: absolute;
-    top: 56px;
+    top: 60px;
     left: 64px;
     right: 64px;
     z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.22em;
-    color: #0ff5c4;
   }
+
+  .top .left { color: #0ff5c4; }
+  .top .right { color: rgba(255, 255, 255, 0.55); }
 
   .middle {
     position: absolute;
-    top: 220px;
+    top: 200px;
     left: 64px;
     right: 64px;
     z-index: 2;
@@ -71,7 +76,7 @@
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     letter-spacing: -0.035em;
-    line-height: 1.08;
+    line-height: 1.06;
   }
 
   .line { display: block; font-size: 92px; }
@@ -80,87 +85,104 @@
   .line3 { color: #0ff5c4; }
 
   .pause-line {
-    width: 56px;
+    width: 52px;
     height: 2px;
-    background: rgba(15, 245, 196, 0.5);
-    margin: 44px 0 36px;
+    background: rgba(15, 245, 196, 0.55);
+    margin: 40px 0 32px;
   }
 
   .tagline {
     font-family: 'DM Sans', sans-serif;
-    font-size: 26px;
+    font-size: 24px;
     color: rgba(255, 255, 255, 0.62);
-    line-height: 1.5;
+    line-height: 1.45;
     max-width: 780px;
     font-weight: 400;
   }
 
   .tagline em {
     font-style: italic;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.88);
   }
 
   .bottom {
     position: absolute;
-    bottom: 56px;
+    bottom: 60px;
     left: 64px;
     right: 64px;
     z-index: 2;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
+    gap: 40px;
   }
 
-  .details-row { display: flex; gap: 44px; }
+  .when { flex: 1; }
 
-  .detail { display: flex; flex-direction: column; gap: 6px; }
+  .when-date {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #f0f0f0;
+    letter-spacing: -0.015em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
 
-  .detail-label {
+  .when-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.72);
+    letter-spacing: -0.005em;
+    line-height: 1.4;
+  }
+
+  .cta { text-align: right; }
+
+  .cta-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.22em;
-    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.24em;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 8px;
   }
 
-  .detail-value {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.92);
+  .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 26px;
+    font-weight: 500;
+    color: #0ff5c4;
     letter-spacing: -0.01em;
   }
 
-  .right-block {
-    text-align: right;
+  .footer {
+    position: absolute;
+    bottom: 22px;
+    left: 64px;
+    right: 64px;
+    z-index: 2;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .event {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.55);
   }
 
-  .event strong { font-weight: 700; color: #f0f0f0; }
-
-  .url {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px;
-    font-weight: 500;
-    color: #0ff5c4;
-  }
+  .event strong { font-weight: 700; color: rgba(240, 240, 240, 0.85); }
 
   .partners {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.45);
   }
 </style>
 </head>
@@ -170,7 +192,10 @@
   <div class="glow-a"></div>
   <div class="glow-b"></div>
 
-  <div class="top">SPRING 2026 · SUFFOLK UNIVERSITY</div>
+  <div class="top">
+    <span class="left">SPRING 2026 · SUFFOLK UNIVERSITY</span>
+    <span class="right">FREE · NO CODE REQUIRED</span>
+  </div>
 
   <div class="middle">
     <div class="question">
@@ -188,26 +213,19 @@
   </div>
 
   <div class="bottom">
-    <div class="details-row">
-      <div class="detail">
-        <div class="detail-label">DATE</div>
-        <div class="detail-value">April 27, 2026</div>
-      </div>
-      <div class="detail">
-        <div class="detail-label">TIME</div>
-        <div class="detail-value">5:30 – 7:00 PM</div>
-      </div>
-      <div class="detail">
-        <div class="detail-label">WHERE</div>
-        <div class="detail-value">Samia Room 316</div>
-      </div>
+    <div class="when">
+      <div class="when-date">April 27, 2026</div>
+      <div class="when-sub">5:30 – 7:00 PM &nbsp;·&nbsp; Samia Room 316, Suffolk University</div>
     </div>
-
-    <div class="right-block">
-      <div class="event"><strong>Agent AIChemy</strong> · The Intent Defense Challenge</div>
+    <div class="cta">
+      <div class="cta-label">REGISTER</div>
       <div class="url">harslan.github.io/aialchemy</div>
-      <div class="partners">SAIL COLLABORATIVE · ISBA SUFFOLK</div>
     </div>
+  </div>
+
+  <div class="footer">
+    <div class="event"><strong>Agent AIChemy</strong> · The Intent Defense Challenge</div>
+    <div class="partners">SAIL COLLABORATIVE · ISBA SUFFOLK</div>
   </div>
 </div>
 
