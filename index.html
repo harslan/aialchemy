@@ -134,6 +134,23 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .line, .pause-line, .hero .subtext, .hero .no-code {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+
+  body.noanim .line,
+  body.noanim .pause-line,
+  body.noanim .hero .subtext,
+  body.noanim .hero .no-code {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
   .pause-line {
     width: 48px;
     height: 2px;
@@ -449,6 +466,8 @@
 </main>
 
 <script>
+  if (location.search.includes('noanim')) document.body.classList.add('noanim');
+
   const form = document.getElementById('rsvp-form');
   const thanks = document.getElementById('thanks');
 

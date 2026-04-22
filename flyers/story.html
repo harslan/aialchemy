@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Agent AIChemy — Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #050507;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+  }
+
+  .card {
+    position: absolute;
+    inset: 0;
+    background: #050507;
+    overflow: hidden;
+  }
+
+  .glow-top {
+    position: absolute;
+    top: 18%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(15, 245, 196, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .glow-bottom {
+    position: absolute;
+    bottom: -10%;
+    right: -12%;
+    width: 760px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(15, 245, 196, 0.05) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .top {
+    position: absolute;
+    top: 140px;
+    left: 80px;
+    right: 80px;
+    z-index: 2;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.24em;
+    color: #0ff5c4;
+    text-align: center;
+  }
+
+  .middle {
+    position: absolute;
+    top: 380px;
+    left: 80px;
+    right: 80px;
+    z-index: 2;
+  }
+
+  .question {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+  }
+
+  .line { display: block; font-size: 104px; }
+  .line1 { color: rgba(255, 255, 255, 0.5); }
+  .line2 { color: #f0f0f0; }
+  .line3 { color: #0ff5c4; }
+
+  .pause-line {
+    width: 72px;
+    height: 2px;
+    background: rgba(15, 245, 196, 0.5);
+    margin: 64px 0 48px;
+  }
+
+  .tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 34px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.45;
+    font-weight: 400;
+    max-width: 860px;
+  }
+
+  .tagline em {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .details {
+    position: absolute;
+    bottom: 480px;
+    left: 80px;
+    right: 80px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .detail-row {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 22px;
+  }
+
+  .detail-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.24em;
+    color: rgba(255, 255, 255, 0.45);
+    min-width: 110px;
+  }
+
+  .detail-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: -0.01em;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 120px;
+    left: 80px;
+    right: 80px;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .cta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 14px;
+  }
+
+  .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+    font-weight: 500;
+    color: #0ff5c4;
+    margin-bottom: 44px;
+  }
+
+  .event {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 10px;
+  }
+
+  .event strong { font-weight: 700; color: #f0f0f0; }
+
+  .partners {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="glow-top"></div>
+  <div class="glow-bottom"></div>
+
+  <div class="top">SPRING 2026 · SUFFOLK UNIVERSITY</div>
+
+  <div class="middle">
+    <div class="question">
+      <span class="line line1">Your AI did</span>
+      <span class="line line2">everything right.</span>
+      <span class="line line3">So why did it fail?</span>
+    </div>
+
+    <div class="pause-line"></div>
+
+    <div class="tagline">
+      They'll follow your every instruction. <em>Perfectly.</em><br>
+      And that will be the problem.
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="detail-row">
+      <div class="detail-label">DATE</div>
+      <div class="detail-value">April 27, 2026</div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-label">TIME</div>
+      <div class="detail-value">5:30 – 7:00 PM</div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-label">WHERE</div>
+      <div class="detail-value">Samia Room 316</div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="cta-label">REGISTER</div>
+    <div class="url">harslan.github.io/aialchemy</div>
+    <div class="event"><strong>Agent AIChemy</strong> · The Intent Defense Challenge</div>
+    <div class="partners">SAIL COLLABORATIVE · ISBA SUFFOLK</div>
+  </div>
+</div>
+
+</body>
+</html>
