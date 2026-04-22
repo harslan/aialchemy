@@ -448,7 +448,7 @@
       </div>
     </div>
 
-    <form id="rsvp-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+    <form id="rsvp-form" action="https://formspree.io/f/xgornglo" method="POST">
       <div class="field">
         <label for="name">NAME</label>
         <input id="name" name="name" type="text" required autocomplete="name">
@@ -486,13 +486,8 @@
   const thanks = document.getElementById('thanks');
 
   form.addEventListener('submit', async (e) => {
-    const action = form.getAttribute('action');
-    if (action.includes('REPLACE_WITH_FORM_ID')) {
-      e.preventDefault();
-      alert('Formspree endpoint not configured yet. Replace REPLACE_WITH_FORM_ID in index.html with your Formspree form ID.');
-      return;
-    }
     e.preventDefault();
+    const action = form.getAttribute('action');
     try {
       const res = await fetch(action, {
         method: 'POST',
